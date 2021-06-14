@@ -18,8 +18,10 @@
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
     "method-override": "^3.0.0",
     "mongoose": "^5.12.13",
+    "morgan": "^1.10.0",
     "urlencoder": "^0.1.0"
   }
 }

@@ -31,9 +31,9 @@ mongoose.connect(process.env.DATABASE_URL, {
     useFindAndModify: false
 });
 
-db.on('connected', () => console.log('mongo connected'));
+db.on('connected', () => console.log('MongoDB connected'));
 db.on('error', (err) => console.log(err.message, ' is mongo connected?'));
-db.on('disconnected', () => console.log('mongo disconnected'));
+db.on('disconnected', () => console.log('MongoDB disconnected'));
 
 // =====================
 // Mount Middleware
@@ -44,7 +44,10 @@ app.use(methodOverride('_method'));
 app.use(logger('dev'));
 
 
-
+// =====================
+// HOME ROUTE
+// =====================
+app.get('/', (req, res) => res.render('index'));
 
 
 
