@@ -1,0 +1,25 @@
+{
+  "name": "preacher-quotes",
+  "version": "1.0.0",
+  "description": "Famous Preachers and their Sayings",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "quotes",
+    "preachers",
+    "sayings"
+  ],
+  "author": "Obi Nwokogba",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.12.13",
+    "urlencoder": "^0.1.0"
+  }
+}
