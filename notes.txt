@@ -1,0 +1,22 @@
+What is your project idea?
+I've decided to make a collection of Quotes of my favourite preachers. 
+I'm calling it 'Preacher Quotes'. Where users can add preachers and/or quotes.
+
+
+Provide the link to your git repo (make sure it’s set to public)
+https://github.com/obi-nwokogba/preacher-quotes
+
+Provide the link to your Trello board (make sure it’s set to public)
+Also make sure your Trello board includes your user stories, wireframes, ERDs, etc…
+
+https://i.imgur.com/VqxhIhr.jpg
+https://trello.com/b/g7EfZ5wk/preacher-quotes
+
+What were you working on over the weekend / how much progress have you made on your project/planning?
+Over the weekend, I was catching up on homework, and getting a solid understanding of Express projects that have two or three classes of objects/Schemas intracting with each other.
+
+What are you working on today?
+Today I am still working on the boilerplate and designing the mongoDB schemas.
+
+Are you running into any roadblocks or obstacles?
+None at the moment. I think this project will turn out great!

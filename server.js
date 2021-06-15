@@ -1,6 +1,3 @@
-
-
-
 require('dotenv').config();
 
 // ================================
@@ -16,8 +13,6 @@ const app = express();
 // ================================
 // Configure Mongoose
 // ================================
-
-
 app.set('view engine', 'ejs');
 
 // Configure Mongoose
@@ -35,26 +30,53 @@ db.on('connected', () => console.log('MongoDB connected'));
 db.on('error', (err) => console.log(err.message, ' is mongo connected?'));
 db.on('disconnected', () => console.log('MongoDB disconnected'));
 
-// =====================
+// =======================================
 // Mount Middleware
-// =====================
+// =======================================
 app.use(fileUpload({createParentPath:true}));
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(logger('dev'));
+app.use(express.static('public'));
 
-
-// =====================
+// =======================================
 // HOME ROUTE
-// =====================
+// =======================================
 app.get('/', (req, res) => res.render('index'));
 
+// =======================================
+// NEW USER
+// Chose /signup instead of be user/new
+// =======================================
+app.get('/user/new', (req, res) => {
+    res.render('signup.ejs');
+});
 
 
+// =======================================
+// =======================================
+// =======================================
+// =======================================
+// =======================================
+// ============================
+// ============================
+// ============================
+// ============================
+// ============================
+// ============================
+// ============================
+// ============================
 
 // =====================
+// Mount Controller Middlware
+// =====================
+app.use('/users', require('./controllers/users'));
+app.use('/quotes', require('./controllers/quotes'));
+app.use('/quotes', require('./controllers/preachers'));
+
+// =======================================
 // Tell express to listen
-// =====================
+// =======================================
 app.listen(port, () => {
     console.log(`Express is listening on port:${port}`);
 });
