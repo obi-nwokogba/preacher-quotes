@@ -4,6 +4,10 @@ require('dotenv').config();
 // Dependencies
 // ================================
 const express = require('express');
+const quoteRouter = express.Router();
+const preacherRouter = express.Router();
+const userRouter = express.Router();
+
 const port = process.env.PORT || 3000;
 const methodOverride = require('method-override');
 const logger = require('morgan');
@@ -39,18 +43,82 @@ app.use(methodOverride('_method'));
 app.use(logger('dev'));
 app.use(express.static('public'));
 
+
+// =======================================
+// USER ROUTES - TO BE PUT IN USER CONTROLLER
 // =======================================
 // HOME ROUTE
 // =======================================
 app.get('/', (req, res) => res.render('index'));
 
 // =======================================
-// NEW USER
+// NEW USER PAGE
 // Chose /signup instead of be user/new
 // =======================================
 app.get('/user/new', (req, res) => {
     res.render('signup.ejs');
 });
+
+// =======================================
+// CREATE USER - POST
+// =======================================
+app.post('/users', (req, res) => {
+    User.create(req.body, (error, createdUser) => {
+        res.redirect('/users');
+    });
+});
+
+// =======================================
+// SHOW USERS
+// =======================================
+app.get('/users/:id', (req, res) => {
+    User.findById(req.params.id, (error, foundUser) => {
+        res.render('show.ejs', {
+            user: foundUser
+        })
+    });
+});
+
+
+
+
+
+
+
+
+
+
+// =======================================
+// PREACHER ROUTES
+// =======================================
+// HOME ROUTE
+// =======================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// =======================================
+// QUOTES ROUTES
+// =======================================
+// HOME ROUTE
+// =======================================
 
 
 // =======================================
@@ -70,9 +138,9 @@ app.get('/user/new', (req, res) => {
 // =====================
 // Mount Controller Middlware
 // =====================
-app.use('/users', require('./controllers/users'));
-app.use('/quotes', require('./controllers/quotes'));
-app.use('/quotes', require('./controllers/preachers'));
+//app.use('/users', require('./controllers/users'));
+//app.use('/quotes', require('./controllers/quotes'));
+//app.use('/quotes', require('./controllers/preachers'));
 
 // =======================================
 // Tell express to listen

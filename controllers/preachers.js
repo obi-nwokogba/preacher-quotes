@@ -1,9 +1,13 @@
+// ===========================
 // Dependencies
+// ===========================
 const router = require('express').Router();
+const User = require('../models/user');
 const Preacher = require('../models/preacher');
 const Quote = require('../models/quote');
-// Define routes/controllers
 
+// Define routes/controllers
+/*
 // We are mounting this controller on /authors
 router.get('/', async (req, res) => {
     try {
@@ -61,6 +65,9 @@ router.get('/:id/edit', (req, res) => {
         res.render('preachers/edit', { preacher });
     });
 });
+
+
+*/
 
 // Exports
 module.exports = router;
