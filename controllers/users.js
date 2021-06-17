@@ -54,6 +54,21 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+// =======================================
+// EDIT ROUTE
+// =======================================
+router.get('/:id/edit', (req, res) => {
+    User.findById(req.params.id, (err, user) => {
+        res.render('users/edit', { user });
+    });
+});
+
+
+
+
+
+
+
 
 
 /*
@@ -145,11 +160,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.get('/:id/edit', (req, res) => {
-    Author.findById(req.params.id, (err, author) => {
-        res.render('authors/edit', { author });
-    });
-});
+
 */
 
 // Exports

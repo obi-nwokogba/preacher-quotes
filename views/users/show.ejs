@@ -10,23 +10,18 @@
         </div>
         <div class="rightdiv">
 
-    <h2>users > index</h2>
-    <ul>
-        <% for(let i = 0; i < user.length; i++){ %>
-        <li>
-            <a href="/user/<%= user._id %>"><%= user.displayName %></a>
-          
+    <h2>user > show</h2>     
             <section>
-			<a href="/articles/<%=article._id%>/edit">Edit</a>
-			<form action="/articles/<%=article._id%>?_method=DELETE" method="POST">
-				<input type="submit" value="Delete Article" class="button5" />
-			</form>
-		</section>
-		
-        </li>
-        <% } %>
-    </ul>
+            <label>Display Name:</label>
+			 <h3><%= user.displayName %></h3>
 
+             <label>Email Address:</label>
+             <h3><%= user.email %></h3>
+
+             <label>Display Name:</label>
+              <h3><%= user.password %></h3>
+			
+		</section>
         </div>
     </main>
 

@@ -19,7 +19,7 @@
             <section>
             
             <form action="/users/<%=users._id%>?_method=DELETE" method="POST">
-            <a href="/users/<%=users._id%>edit" class="button4">Edit</a>
+            <a href="/users/<%= users[i]._id %>/edit" class="button4">Edit</a>
                 <input type="submit" value="Delete User" class="button5" />
             </form>
         </section>
