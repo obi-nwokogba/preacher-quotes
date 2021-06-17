@@ -40,14 +40,17 @@ router.post('/', async (req, res) => {
     }
 });
 
+// =======================================
+// SHOW - SHOW USERS
+// =======================================
 router.get('/:id', async (req, res) => {
     try {
-        const author = await Author.findById(req.params.id);
-        const articles = await Article.find({ createdBy: author._id });
-        res.render('authors/show', { author, articles });
+        const user = await User.findById(req.params.id);
+        const quotes = await Quote.find({ createdBy: user._id });
+        res.render('users/show', { user, quotes });
     } catch (error) {
         console.log(error);
-        res.redirect('/authors');
+        res.redirect('/users');
     }
 });
 

@@ -1,1 +1,37 @@
-<h1>EDIT USER</h1>
+<%- include(`../partials/header.ejs`) %>
+<title>Preacher Quotes</title>
+</head>
+
+<body>
+    <%- include(`../partials/navbar.ejs`) %>
+    <main class="maindiv">
+        <div class="leftdiv">
+<h1>Edit User</h1>
+        </div>
+        <div class="rightdiv">
+
+<form action="/users/<%= users._id %>?_method=PUT" method="POST">
+
+            <label for="title">Display Name</label>
+			<input type="text" name="displayName" value="<%= users.displayName %>" /><br />
+
+            <label for="body">Email</label>
+			<input type="text" name="email" value="<%= users.email %>" /><br />
+
+			<label for="body">Password</label>
+			<input type="text" name="password" value="<%= users.password %>" /><br />
+
+			<input type="submit" value="Update Article" />
+		</form>
+
+
+        </div>
+    </main>
+
+    <%- include(`../partials/footer.ejs`) %>
+
+
+
+
+
+

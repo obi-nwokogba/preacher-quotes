@@ -37,6 +37,7 @@ body {
     font-weight: 300;
     padding-top: 50px;
 }
+
 a {
     color: #8D649C;
 }
@@ -54,30 +55,38 @@ a:hover {
     height: 100%;
 }
 
+main{
+   background: #FCFCFC;
+}
+
 .rightdiv {
     display: inline-block;
     width: 40%;
     background: #FCFCFC;
     min-height: 210px;
     padding: 50px;
+    text-align:left;
 }
 
 .topsvglogo {
     width: 400px;
     opacity: 0.4;
 }
+
 .maindiv {
     background: #FBF6FC;
     max-width: 1000px;
     margin: 0 auto;
     padding: 0px;
 }
+
 .footerbox {
     font-size: 0.85em;
     background: rgb(194, 194, 194);
     max-width: 1000px;
     margin: 0 auto;
 }
+
 .navbar {
     display: flex;
     border-bottom: solid 3px #C6B1CE;
@@ -87,16 +96,19 @@ a:hover {
     margin: 0 auto;
     padding: 15px;
 }
+
 .navbar>a {
     font-size: 1.2em;
     font-weight: 500;
     text-decoration: none;
 }
+
 .formtextfield {
     border: solid 2px #DDBAEA;
     padding: 10px;
     border-radius: 5px;
 }
+
 label {
     display: block;
 }
@@ -109,6 +121,38 @@ label {
     border-radius: 5px;
     margin: 0 auto;
     margin-top: 15px;
+}
+
+.button4{
+    background: #9D5CC5;
+    padding: 5px;
+    color: white;
+    border:none;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.button4:hover{
+    opacity: 0.9;
+    padding-right: 15px;
+}
+
+/*Mostly used for delete button*/
+.button5{
+    background: #fc441f;
+    padding: 5px;
+    color: white;
+    border:none;
+    text-decoration: none;
+    height: 30px;
+    transition: 0.1s;
+    font-weight: 500;
+}
+
+.button5:hover{
+    background: #CC1122;
+    opacity: 0.9;
+    padding-right: 15px;
 }
 
 /* Small devices (landscape phones, 576px and up)

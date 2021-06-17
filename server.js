@@ -42,11 +42,7 @@ app.use(methodOverride('_method'));
 //app.use(logger('dev'));
 app.use(express.static('public'));
 
-/*
-const quoteRouter = express.Router();
-const preacherRouter = express.Router();
-const userRouter = express.Router();
-*/
+
 
 
 
