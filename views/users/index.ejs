@@ -17,13 +17,14 @@
             <h2><a href="/users/<%= users[i]._id %>"><%= users[i].displayName %></a></h2>
           
             <section>
-            
-            <form action="/users/<%=users._id%>?_method=DELETE" method="POST">
+            <form action="/users/<%=users[i]._id%>?_method=DELETE" method="POST">
+
             <a href="/users/<%= users[i]._id %>/edit" class="button4">Edit</a>
+            
                 <input type="submit" value="Delete User" class="button5" />
+
             </form>
         </section>
-        
         </li>
         <% } %>
     </ul>
@@ -32,9 +33,3 @@
     </main>
 
     <%- include(`../partials/footer.ejs`) %>
-
-
-
-
-
-

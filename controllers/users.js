@@ -27,6 +27,16 @@ router.get('/new', (req, res) => {
     res.render('users/new');
 });
 
+
+// =======================================
+// DELETE ROUTE
+// =======================================
+router.delete('/:id', (req, res) => {
+    User.findByIdAndDelete(req.params.id, (err, removedUser) => {
+        res.redirect('/users');
+    });
+});
+
 // =======================================
 // CREATE USER - POST
 // =======================================
@@ -123,11 +133,7 @@ router.get('/new', (req, res) => {
     res.render('authors/new');
 });
 
-router.delete('/:id', (req, res) => {
-    Author.findByIdAndDelete(req.params.id, (err, removedAuthor) => {
-        res.redirect('/authors');
-    });
-});
+
 
 router.put('/:id', (req, res) => {
     Author.findByIdAndUpdate(
