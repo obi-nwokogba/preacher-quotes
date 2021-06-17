@@ -30,8 +30,8 @@ LESS SATURATED SPECTRUM
 */
 
 body {
-    background-color: #F1E3F6;
-    color: #423B45;
+    background-color: #F9F3FB;
+    color: #383838;
     text-align: center;
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 300;
@@ -47,12 +47,19 @@ a:hover {
 
 .leftdiv {
     display: inline-block;
-    background: red;
+    background: url(`/img/bg2.png`);
     width: 35%;
+    background: #9D5CC5;
+    color: #FCFCFC;
+    height: 100%;
 }
+
 .rightdiv {
     display: inline-block;
-    width: 60%;
+    width: 40%;
+    background: #FCFCFC;
+    min-height: 210px;
+    padding: 50px;
 }
 
 .topsvglogo {
@@ -100,6 +107,8 @@ label {
     display: block;
     border: none;
     border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 15px;
 }
 
 /* Small devices (landscape phones, 576px and up)

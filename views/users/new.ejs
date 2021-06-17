@@ -1,0 +1,28 @@
+<%- include(`../partials/header.ejs`) %>
+<title>Preacher Quotes</title>
+</head>
+
+<body>
+    <%- include(`../partials/navbar.ejs`) %>
+    <main class="maindiv">
+        <div class="leftdiv">
+            <h1>Sign Up</h1>
+        </div>
+        <div class="rightdiv">
+        <form action="/users" method="POST">
+            <label>Email Address</label>
+            <input type="text" name="email" class="formtextfield">
+
+            <label>Your Name</label>
+            <input type="text" name="displayName" class="formtextfield">
+
+            <label for="email">Password</label>
+            <input type="text" name="password" class="formtextfield">
+
+
+            <button type="submit" class="button1">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <%- include(`../partials/footer.ejs`) %>

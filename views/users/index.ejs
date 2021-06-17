@@ -1,0 +1,40 @@
+<%- include(`../partials/header.ejs`) %>
+<title>Preacher Quotes</title>
+</head>
+
+<body>
+    <%- include(`../partials/navbar.ejs`) %>
+    <main class="maindiv">
+        <div class="leftdiv">
+<h1>Users Index.ejs</h1>
+        </div>
+        <div class="rightdiv">
+
+
+
+
+
+    <h2>users > index</h2>
+    <ul>
+        <% for(let i = 0; i < users.length; i++){ %>
+        <li>
+            <a href="/users/<%= users[i]._id %>"><%= users[i].displayName %></a>
+        </li>
+        <% } %>
+    </ul>
+
+
+
+
+
+
+        </div>
+    </main>
+
+    <%- include(`../partials/footer.ejs`) %>
+
+
+
+
+
+

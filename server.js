@@ -4,21 +4,20 @@ require('dotenv').config();
 // Dependencies
 // ================================
 const express = require('express');
-const quoteRouter = express.Router();
-const preacherRouter = express.Router();
-const userRouter = express.Router();
-
 const port = process.env.PORT || 3000;
 const methodOverride = require('method-override');
 const logger = require('morgan');
-const fileUpload = require('express-fileupload');
+//const fileUpload = require('express-fileupload');
+
+// Initialize Express
 const app = express();
+
+// Set view engine
+app.set('view engine', 'ejs');
 
 // ================================
 // Configure Mongoose
 // ================================
-app.set('view engine', 'ejs');
-
 // Configure Mongoose
 const mongoose = require('mongoose');
 const db = mongoose.connection;
@@ -37,11 +36,31 @@ db.on('disconnected', () => console.log('MongoDB disconnected'));
 // =======================================
 // Mount Middleware
 // =======================================
-app.use(fileUpload({createParentPath:true}));
+//app.use(fileUpload({createParentPath:true}));
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use(express.static('public'));
+
+/*
+const quoteRouter = express.Router();
+const preacherRouter = express.Router();
+const userRouter = express.Router();
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // =======================================
@@ -51,32 +70,19 @@ app.use(express.static('public'));
 // =======================================
 app.get('/', (req, res) => res.render('index'));
 
-// =======================================
-// NEW USER PAGE
-// Chose /signup instead of be user/new
-// =======================================
-app.get('/user/new', (req, res) => {
-    res.render('signup.ejs');
-});
+
+// =====================
+// Mount Controller Middlware
+// =====================
+app.use('/users', require('./controllers/users'));
+app.use('/quotes', require('./controllers/quotes'));
+app.use('/preachers', require('./controllers/preachers'));
 
 // =======================================
-// CREATE USER - POST
+// Tell express to listen
 // =======================================
-app.post('/users', (req, res) => {
-    User.create(req.body, (error, createdUser) => {
-        res.redirect('/users');
-    });
-});
-
-// =======================================
-// SHOW USERS
-// =======================================
-app.get('/users/:id', (req, res) => {
-    User.findById(req.params.id, (error, foundUser) => {
-        res.render('show.ejs', {
-            user: foundUser
-        })
-    });
+app.listen(port, () => {
+    console.log(`Express is listening on port:${port}`);
 });
 
 
@@ -89,24 +95,18 @@ app.get('/users/:id', (req, res) => {
 
 
 // =======================================
-// PREACHER ROUTES
 // =======================================
-// HOME ROUTE
 // =======================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// =======================================
+// =======================================
+// ============================
+// ============================
+// ============================
+// ============================
+// ============================
+// ============================
+// ============================
+// ============================
 
 
 
@@ -120,31 +120,3 @@ app.get('/users/:id', (req, res) => {
 // HOME ROUTE
 // =======================================
 
-
-// =======================================
-// =======================================
-// =======================================
-// =======================================
-// =======================================
-// ============================
-// ============================
-// ============================
-// ============================
-// ============================
-// ============================
-// ============================
-// ============================
-
-// =====================
-// Mount Controller Middlware
-// =====================
-//app.use('/users', require('./controllers/users'));
-//app.use('/quotes', require('./controllers/quotes'));
-//app.use('/quotes', require('./controllers/preachers'));
-
-// =======================================
-// Tell express to listen
-// =======================================
-app.listen(port, () => {
-    console.log(`Express is listening on port:${port}`);
-});
