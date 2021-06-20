@@ -6,7 +6,7 @@
     <%- include(`../partials/navbar.ejs`) %>
     <main class="maindiv">
         <div class="leftdiv">
-<h1> <%= user.displayName %></h1>
+<h1><%= user.displayName %></h1>
         </div>
         <div class="rightdiv">
    
@@ -17,8 +17,14 @@
              <label>Email Address:</label>
              <h3><%= user.email %></h3>
 
-             <label>Display Name:</label>
+             <label>Unhashed password:</label>
               <h3><%= user.password %></h3>
+
+              <label>Salted + Hashed password:</label>
+              <h3><%= user.saltedhashedpassword %></h3>
+
+              <label>Date joined:</label>
+              <h3><%= user.createdAt %></h3>
 			
 		</section>
         </div>

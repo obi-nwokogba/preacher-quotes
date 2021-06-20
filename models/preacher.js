@@ -4,6 +4,9 @@ const Schema = mongoose.Schema;
 const preacherSchema = new Schema({
     firstName: String,
     lastName: String,
+    yearOfBirth: String,
+    yearOfDeath: String,
+    addedByUserId: String,
     preacherPhoto: String,
     createdBy: {
         type: Schema.Types.ObjectId,

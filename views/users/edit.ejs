@@ -6,22 +6,24 @@
     <%- include(`../partials/navbar.ejs`) %>
     <main class="maindiv">
         <div class="leftdiv">
-<h1>Edit User</h1>
+<h1>Edit User - <%= user.displayName %></h1>
         </div>
         <div class="rightdiv">
 
-<form action="/users/<%= users._id %>?_method=PUT" method="POST">
+<form action="/users/<%= user._id %>?_method=PUT" method="POST">
 
             <label for="title">Display Name</label>
-			<input type="text" name="displayName" value="<%= users.displayName %>" /><br />
+			<input type="text" name="displayName" value="<%= user.displayName %>" class="formtextfield"/><br />
 
             <label for="body">Email</label>
-			<input type="text" name="email" value="<%= users.email %>" /><br />
+			<input type="text" name="email" value="<%= user.email %>" class="formtextfield" /><br />
 
 			<label for="body">Password</label>
-			<input type="text" name="password" value="<%= users.password %>" /><br />
+			<input type="text" name="password" value="<%= user.password %>" class="formtextfield" />
+            
+            <br /><br />
 
-			<input type="submit" value="Update Article" />
+			<input type="submit" value="Save Profile Edits" class="button4" />
 		</form>
 
 

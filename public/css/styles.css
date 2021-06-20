@@ -76,6 +76,7 @@ main {
     height: 100%;
     padding-left: 10px;
     padding-top: 30px;
+    text-align:center;
 }
 .rightdiv {
     display: flex;
@@ -114,7 +115,7 @@ main {
     text-decoration: none;
     border-bottom: solid 2px #e3e3e3;
     text-decoration: none;
-    padding-botto: 7px;
+    padding-bottom: 7px;
 }
 .footerbox>a:hover {
     margin-left: 15px;
@@ -147,6 +148,7 @@ main {
     border: solid 2px #DDBAEA;
     padding: 10px;
     border-radius: 5px;
+    height:30px;
 }
 label {
     display: block;
@@ -171,8 +173,11 @@ label {
     border: none;
     text-decoration: none;
     font-weight: 500;
+    height:35px;
+    transition: 0.2s;
 }
 .button4:hover {
+    color:white;
     opacity: 0.9;
     padding-right: 15px;
 }
@@ -185,8 +190,9 @@ label {
     border: none;
     text-decoration: none;
     height: 30px;
-    transition: 0.1s;
+    transition: 0.2s;
     font-weight: 500;
+    height:35px;
 }
 .button5:hover {
     background: #CC1122;

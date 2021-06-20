@@ -1,1 +1,33 @@
-<h1>Users</h1>
+<%- include(`../partials/header.ejs`) %>
+<title>Preacher Quotes</title>
+</head>
+
+<body>
+    <%- include(`../partials/navbar.ejs`) %>
+    <main class="maindiv">
+        <div class="leftdiv">
+<h1>List of Quoted Preachers</h1>
+        </div>
+        <div class="rightdiv">
+    <ul>
+        <% for(let i = 0; i < preachers.length; i++){ %>
+        <li>
+            <h2><a href="/preachers/<%= preachers[i]._id %>"><%= preachers[i].firstName %></a></h2>
+          
+            <section>
+            <form action="/users/<%=preachers[i]._id%>?_method=DELETE" method="POST">
+
+            <a href="/preachers/<%= preachers[i]._id %>/edit" class="button4">Edit</a>
+            
+                <input type="submit" value="Delete Preacher" class="button5" />
+
+            </form>
+        </section>
+        </li>
+        <% } %>
+    </ul>
+
+        </div>
+    </main>
+
+    <%- include(`../partials/footer.ejs`) %>

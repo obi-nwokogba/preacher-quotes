@@ -20,3 +20,22 @@ Today I am still working on the boilerplate and designing the mongoDB schemas.
 
 Are you running into any roadblocks or obstacles?
 None at the moment. I think this project will turn out great!
+
+
+
+
+
+What were you working on yesterday?
+Yesterday I worked on the models, mongoose to mongoDB Schemas, and sign up page.
+
+What are you working on today?
+Today I am working on starting to populate my mongoDB collection from within the app, not using a seed data file.
+
+When do you plan to reach certain checkpoints?
+Ex: full CRUD on 1 model, complete styling, complete deployment
+(also include any non-MVP related checkpoints that are important to your project)
+- Full Crud on Model 1 by the end of tommorow. 
+I plan to have full Create and Read on Models 1(User) and 2(Preachers) today, since it will work very logically in the app.
+
+Are you running into any roadblocks or obstacles?
+None at the moment.

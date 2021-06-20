@@ -1,0 +1,50 @@
+<%- include(`../partials/header.ejs`) %>
+<title>Preacher Quotes</title>
+</head>
+
+<body>
+    <%- include(`../partials/navbar.ejs`) %>
+    <main class="maindiv">
+        <div class="leftdiv">
+            <h1>Add a Quote</h1>
+        </div>
+        <div class="rightdiv">
+        <form action="/preachers" method="POST">
+            <label>Preacher</label>
+
+            <select>
+
+                <option>A</option>
+            </select>
+            <input type="text" name="firstName" class="formtextfield">
+
+            <label>Last Name</label>
+            <input type="text" name="lastName" class="formtextfield">
+
+            <label>Year of Birth e.g. 1961</label>
+            <input type="text" name="yearOfBirth" class="formtextfield">
+
+            <label>Last Name</label>
+            <input type="text" name="yearOfDeath" class="formtextfield">
+
+            <label for="email">User Adding this Preacher</label>
+            <input type="text" name="addedByUserId" class="formtextfield">
+
+
+            <button type="submit" class="button1">Add Preacher</button>
+            </form>
+        </div>
+    </main>
+
+    <%- include(`../partials/footer.ejs`) %>
+
+
+
+
+
+    firstName: String,
+    lastName: String,
+    yearOfBirth: String,
+    yearOfDeath: String,
+    addedByUserId: String,
+    preacherPhoto: String,

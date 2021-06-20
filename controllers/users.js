@@ -38,6 +38,19 @@ router.delete('/:id', (req, res) => {
 });
 
 // =======================================
+// UPDATE ROUTE
+// =======================================
+router.put('/:id', (req, res) => {
+    User.findByIdAndUpdate(
+        req.params.id, 
+        req.body, 
+        { new: true }, (err, updatedUser) => {
+            res.redirect(`/users/${req.params.id}`);
+    });
+});
+
+
+// =======================================
 // CREATE USER - POST
 // =======================================
 router.post('/', async (req, res) => {
