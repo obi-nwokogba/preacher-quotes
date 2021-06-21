@@ -17,7 +17,7 @@ When I would hear a preacher make a remarkable statement in a video, I would won
 * MongoDB, Mongoose
 
 ### Screenshots
-![Home Page Screenshot](https://i.imgur.com/8BClO7g.png)
+![Home Page Screenshot](https://i.imgur.com/QcjoASk.png)
 
 ![Users Page](https://i.imgur.com/8BClO7g.png)
 
