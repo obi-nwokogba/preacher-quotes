@@ -2,6 +2,16 @@
 <title>Preacher Quotes</title>
 </head>
 
+
+<!-- firstName: String,
+    lastName: String,
+    country: String,
+    yearOfBirth: String,
+    yearOfDeath: String,
+    addedByUserId: String,
+    preacherPhoto: String, -->
+
+
 <body>
     <%- include(`../partials/navbar.ejs`) %>
     <main class="maindiv">
@@ -16,13 +26,16 @@
             <label>Last Name</label>
             <input type="text" name="lastName" class="formtextfield">
 
+            <label>Country</label>
+            <%- include(`../partials/countries.ejs`) %><br />
+
             <label>Year of Birth e.g. 1961</label>
             <input type="text" name="yearOfBirth" class="formtextfield">
 
-            <label>Last Name</label>
+            <label>Year of Death - leave blank if alive</label>
             <input type="text" name="yearOfDeath" class="formtextfield">
 
-            <label for="email">User Adding this Preacher</label>
+            <label for="email">Select your user ID</label>
             <input type="text" name="addedByUserId" class="formtextfield">
 
 

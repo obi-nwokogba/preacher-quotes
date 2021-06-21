@@ -6,17 +6,17 @@
     <%- include(`../partials/navbar.ejs`) %>
     <main class="maindiv">
         <div class="leftdiv">
-<h1>Edit User - <%= user.displayName %></h1>
+<h1><small class="lightest">Edit User</small><br /><%= user.displayName %></h1>
         </div>
         <div class="rightdiv">
 
 <form action="/users/<%= user._id %>?_method=PUT" method="POST">
 
             <label for="title">Display Name</label>
-			<input type="text" name="displayName" value="<%= user.displayName %>" class="formtextfield"/><br />
+			<input type="text" name="displayName" value="<%= user.displayName %>" /><br />
 
             <label for="body">Email</label>
-			<input type="text" name="email" value="<%= user.email %>" class="formtextfield" /><br />
+			<input type="text" name="email" value="<%= user.email %>" class="formtextfield"/><br />
 
 			<label for="body">Password</label>
 			<input type="text" name="password" value="<%= user.password %>" class="formtextfield" />

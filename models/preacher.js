@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const preacherSchema = new Schema({
     firstName: String,
     lastName: String,
+    country: String,
     yearOfBirth: String,
     yearOfDeath: String,
     addedByUserId: String,
@@ -16,3 +17,7 @@ const preacherSchema = new Schema({
 
 const Preacher = mongoose.model('Preacher', preacherSchema);
 module.exports = Preacher;
+
+
+
+// 

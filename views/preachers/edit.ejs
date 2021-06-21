@@ -1,1 +1,45 @@
-<h1>EDIT USER</h1>
+<%- include(`../partials/header.ejs`) %>
+<title>Preacher Quotes</title>
+</head>
+
+<body>
+    <%- include(`../partials/navbar.ejs`) %>
+    <main class="maindiv">
+        <div class="leftdiv">
+<h1>Edit Preacher - <%= preacher.firstName %></h1>
+        </div>
+        <div class="rightdiv">
+
+<form action="/preachers/<%= preacher._id %>?_method=PUT" method="POST">
+
+            <label for="title">First Name</label>
+			<input type="text" name="firstName" value="<%= preacher.firstName %>" class="formtextfield"/><br />
+
+            <label for="body">Last Name</label>
+			<input type="text" name="email" value="<%= preacher.lastName %>" class="formtextfield" /><br />
+
+            <label for="body">Country</label>
+			<%- include(`../partials/countries.ejs`) %><br />
+
+			<label for="body">Year of Birth</label>
+			<input type="text" name="yearOfBirth" value="<%= preacher.yearOfBirth %>" class="formtextfield" />
+
+            <label for="body">Year of Death</label>
+			<input type="text" name="yearOfDeath" value="<%= preacher.yearOfDeath %>" class="formtextfield" />
+
+
+            
+            <br /><br />
+
+			<input type="submit" value="Save Edits" class="button4" />
+		</form>
+        </div>
+    </main>
+
+    <%- include(`../partials/footer.ejs`) %>
+
+
+
+
+
+

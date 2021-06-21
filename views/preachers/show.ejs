@@ -6,25 +6,23 @@
     <%- include(`../partials/navbar.ejs`) %>
     <main class="maindiv">
         <div class="leftdiv">
-<h1> <small>PREACHER:</small><%= preacher.displayName %></h1>
+<h1> <small class="lightest">PREACHER:</small><br /><%= preacher.firstName %>&nbsp;<%= preacher.lastName %></h1>
         </div>
         <div class="rightdiv">
    
             <section>
-            <label>Display Name:</label>
-			 <h3><%= preacher.firstName %>&bull;<%= preacher.lastName %></h3>
+            <label>Name:</label>
+			 <h3><%= preacher.firstName %>&nbsp;<%= preacher.lastName %></h3>
+             <label>Born:</label>
+              <h3><%= preacher.yearOfBirth %> - <%= preacher.yearOfDeath %></h3>
 
-             <label>Email Address:</label>
-             <h3><%= preacher.email %></h3>
+             <label>Country:</label>
+             <h3><%= preacher.country %></h3>
 
-             <label>Unhashed password:</label>
-              <h3><%= preacher.password %></h3>
+             
 
-              <label>Salted + Hashed password:</label>
-              <h3><%= preacher.saltedhashedpassword %></h3>
-
-              <label>Date joined:</label>
-              <h3><%= preacher.createdAt %></h3>
+              <label>Quotes:</label>
+              <h3>TODO: Add Quotes</h3>
 			
 		</section>
         </div>

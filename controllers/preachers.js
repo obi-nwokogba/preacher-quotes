@@ -6,9 +6,18 @@ const User = require('../models/user');
 const Preacher = require('../models/preacher');
 const Quote = require('../models/quote');
 
-// Define routes/controllers
 
-// We are mounting this controller on /users
+
+const seedData = require('../models/seedData.js');
+
+router.get('/seed', (req, res) => {
+    Preacher.deleteMany({}, (error, allPreachers) => {})
+    Preacher.create(seedData, (error, data) => {
+        res.redirect('/preachers')
+    })
+})
+
+// Define routes/controllers
 
 router.get('/', async (req, res) => {
     try {

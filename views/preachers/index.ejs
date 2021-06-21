@@ -2,20 +2,31 @@
 <title>Preacher Quotes</title>
 </head>
 
+
+<!-- firstName: String,
+    lastName: String,
+    country: String,
+    yearOfBirth: String,
+    yearOfDeath: String,
+    addedByUserId: String,
+    preacherPhoto: String, -->
 <body>
     <%- include(`../partials/navbar.ejs`) %>
     <main class="maindiv">
         <div class="leftdiv">
 <h1>List of Quoted Preachers</h1>
+<br /><br /><br /><br />
+<a class="button4" href="/preachers/seed">Seed this List!</a>
         </div>
         <div class="rightdiv">
     <ul>
         <% for(let i = 0; i < preachers.length; i++){ %>
         <li>
-            <h2><a href="/preachers/<%= preachers[i]._id %>"><%= preachers[i].firstName %></a></h2>
+            <h2><a href="/preachers/<%= preachers[i]._id %>"><%= preachers[i].firstName %>  
+                <%= preachers[i].lastName %></a></h2>
           
             <section>
-            <form action="/users/<%=preachers[i]._id%>?_method=DELETE" method="POST">
+            <form action="/preachers/<%=preachers[i]._id%>?_method=DELETE" method="POST">
 
             <a href="/preachers/<%= preachers[i]._id %>/edit" class="button4">Edit</a>
             
