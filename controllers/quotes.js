@@ -30,10 +30,6 @@ router.get('/new', (req, res) => {
         console.log(error);
         res.redirect('/quotes');
     }
-
-
-
-
 });
 
 // =======================================

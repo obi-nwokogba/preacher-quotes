@@ -109,6 +109,14 @@ main {
     flex-direction: column;
 }
 
+.smallPreacherBox{
+    width:250px;
+    padding:10px;
+    border:dotted 1px rgb(184, 184, 184);
+    display:inline-block;
+
+}
+
 .rightdiv {
     display: flex;
     width: 60%;
@@ -117,6 +125,13 @@ main {
     padding: 50px;
     padding-top: 30px;
     text-align: left;
+    flex-direction: column;
+}
+
+.rowcontainer{
+    flex-wrap:wrap;
+    display:flex;
+    flex-direction: column;
 }
 
 .topsvglogo {
@@ -133,6 +148,11 @@ main {
     display: flex;
     flex-direction: row;
     width: 100%;
+}
+
+.preacherthumbnail{
+    border-radius:50%;
+    max-width:60px;
 }
 
 .footerbox {
@@ -312,12 +332,38 @@ Small devices (landscape phones, 576px and up) */
 
     .leftdiv{
         display:block;
-        width:100%;
+        width:95%;
+        height:fit-content;
     }
 
     .rightdiv{
         display:block;
-        width:100%;
+        width:95%;
+    }
+
+    .formtextfield {
+        border: solid 2px #DDBAEA;
+        padding: 10px;
+        border-radius: 5px;
+        height: 30px;
+    }
+    
+    .formselect {
+        border: solid 2px #DDBAEA;
+        padding: 10px;
+        border-radius: 5px;
+        height: 30px;
+    }
+    
+    .formtextarea {
+        border: solid 2px #DDBAEA;
+        padding: 20px;
+        border-radius: 5px;
+        height: 30px;
+        width: 70%;
+        height: 100px;
+        font-size: 1.2em;
+        line-height: 1.4em;
     }
 }
 

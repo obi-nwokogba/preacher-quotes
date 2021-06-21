@@ -10,13 +10,40 @@
         </div>
         <div class="rightdiv">
 <h2>Preachers</h2>
+<div class="rowcontainer">
+<% for(let i = 0; i < preachers.length; i++){ %>
+       
+       
+       
+        <div class="smallpreacherbox">
+
+<img src="<%= preachers[i].preacherPhoto %>" class="preacherthumbnail">
 
 
+            <h4><a href="/preachers/<%= preachers[i]._id %>"><%= preachers[i].firstName %>  
+                <%= preachers[i].lastName %></a></h4>
+          
+           
+          
+
+            <a href="/preachers/<%= preachers[i]._id %>/edit" class="button4">Edit</a>
+            
+                <input type="submit" value="Delete Preacher" class="button5" />
+
+           
+
+        </div>
+        <% } %>
+
+</div>
 
 <h2>Quotes</h2>
 
 
 <h2>Members</h2>
+
+
+<%= users.length %>
         </div>
     </main>
 

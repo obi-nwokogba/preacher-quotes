@@ -39,37 +39,35 @@ db.on('disconnected', () => console.log('MongoDB disconnected'));
 //app.use(fileUpload({createParentPath:true}));
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
-//app.use(logger('dev'));
 app.use(express.static('public'));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// =======================================
+// ===========================================
 // USER ROUTES - TO BE PUT IN USER CONTROLLER
-// =======================================
+// ===========================================
 // HOME ROUTE
-// =======================================
-app.get('/', (req, res) => res.render('index'));
+// ===========================================
+const User = require('./models/user');
+const Preacher = require('./models/preacher');
+const Quote = require('./models/quote');
 
 
-// =====================
+app.get('/', async (req, res) => {
+    try {
+        const preachers = await Preacher.find({});
+        const quotes = await Quote.find({});
+        const users = await User.find({});
+        console.log(users);
+        res.render('index', {preachers,quotes,users});
+    } catch (error) {
+        console.log(error);
+        res.redirect('/quotes');
+    }
+});
+
+
+// ===========================
 // Mount Controller Middlware
-// =====================
+// ===========================
 app.use('/users', require('./controllers/users'));
 app.use('/quotes', require('./controllers/quotes'));
 app.use('/preachers', require('./controllers/preachers'));
@@ -80,39 +78,3 @@ app.use('/preachers', require('./controllers/preachers'));
 app.listen(port, () => {
     console.log(`Express is listening on port:${port}`);
 });
-
-
-
-
-
-
-
-
-
-
-// =======================================
-// =======================================
-// =======================================
-// =======================================
-// =======================================
-// ============================
-// ============================
-// ============================
-// ============================
-// ============================
-// ============================
-// ============================
-// ============================
-
-
-
-
-
-
-
-// =======================================
-// QUOTES ROUTES
-// =======================================
-// HOME ROUTE
-// =======================================
-
