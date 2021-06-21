@@ -28,6 +28,9 @@ When I would hear a preacher make a remarkable statement in a video, I would won
 ### Wireframe
 ![Wireframe of Home Page](https://i.imgur.com/HhXpnhO.png)
 
+### Getting Started
+Please click [HERE](https://preacherquotes.herokuapp.com/) to launch the live, working app!
+
 ### User Stories
 - I want to be able to discover quotes on certain topics that I like.
 - I would like to see quotes that other users like.
