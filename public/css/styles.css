@@ -151,6 +151,22 @@ main {
     border-radius: 5px;
     height:30px;
 }
+.formselect{
+    border: solid 2px #DDBAEA;
+    padding: 10px;
+    border-radius: 5px;
+    height:30px;
+}
+.formtextarea {
+    border: solid 2px #DDBAEA;
+    padding: 20px;
+    border-radius: 5px;
+    height:30px;
+    width:400px;
+    height:200px;
+    font-size:1.2em;
+    line-height:1.4em;
+}
 label {
     display: block;
     margin-bottom: 5px;

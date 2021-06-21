@@ -10,28 +10,30 @@
         </div>
         <div class="rightdiv">
         <form action="/preachers" method="POST">
-            <label>Preacher</label>
+            <label>Select Preacher</label>
 
-            <select>
-
-                <option>A</option>
+            <select name="preacherID" class="formselect">
+                <% for(let i = 0; i < preachers.length; i++){ %>
+                    <option value="hi">
+                        <%= preachers[i].firstName %><%= preachers[i].lastName %>
+                    </option>
+                    <% } %>
             </select>
-            <input type="text" name="firstName" class="formtextfield">
 
-            <label>Last Name</label>
-            <input type="text" name="lastName" class="formtextfield">
+            <label>Quote</label>
+            <textarea type="text" name="lastName" class="formtextarea"></textarea>
 
-            <label>Year of Birth e.g. 1961</label>
+            <label>Source of Quote</label>
             <input type="text" name="yearOfBirth" class="formtextfield">
 
-            <label>Last Name</label>
+            <label>Title</label>
             <input type="text" name="yearOfDeath" class="formtextfield">
 
-            <label for="email">User Adding this Preacher</label>
+            <label for="email">URL</label>
             <input type="text" name="addedByUserId" class="formtextfield">
 
 
-            <button type="submit" class="button1">Add Preacher</button>
+            <button type="submit" class="button1">Add Quote</button>
             </form>
         </div>
     </main>

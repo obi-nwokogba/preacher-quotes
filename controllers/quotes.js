@@ -23,7 +23,17 @@ router.get('/', async (req, res) => {
 // NEW - ADD A NEW QUOTE
 // =======================================
 router.get('/new', (req, res) => {
-    res.render('quotes/new');
+    try {
+        const preachers = Preacher.find({});
+        res.render('quotes/new', { preachers });
+    } catch (error) {
+        console.log(error);
+        res.redirect('/quotes');
+    }
+
+
+
+
 });
 
 // =======================================
@@ -96,7 +106,7 @@ router.get('/:id/edit', (req, res) => {
 /*
 // =======================================
 // CREATE USER - POST
-// =======================================
+// =======================================/
 /*
 app.post('/users', (req, res) => {
     User.create(req.body, (error, createdUser) => {
