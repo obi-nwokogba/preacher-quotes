@@ -7,7 +7,6 @@ const Preacher = require('../models/preacher');
 const Quote = require('../models/quote');
 
 
-
 const seedData = require('../models/seedData.js');
 
 router.get('/seed', (req, res) => {
