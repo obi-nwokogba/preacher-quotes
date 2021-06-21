@@ -5,6 +5,7 @@ const router = require('express').Router();
 const User = require('../models/user');
 const Quote = require('../models/quote');
 const Preacher = require('../models/preacher');
+const bcrypt = require('bcrypt');
 // Define routes/controllers
 
 // We are mounting this controller on /users
@@ -55,6 +56,7 @@ router.put('/:id', (req, res) => {
 // =======================================
 router.post('/', async (req, res) => {
     try {
+        req.body.hashedpassword = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
         await User.create(req.body);
         res.redirect('/users');
     } catch (error) {

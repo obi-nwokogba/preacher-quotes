@@ -2,13 +2,10 @@
 <title>Preacher Quotes</title>
 </head>
 
-<!-- firstName: String,
-    lastName: String,
-    country: String,
-    yearOfBirth: String,
-    yearOfDeath: String,
-    addedByUserId: String,
-    preacherPhoto: String, -->
+<!-- preacherID: String,
+    quoteText: String,
+    quoteSourceType: String,
+    quoteSourceURL: String, -->
 
 <body>
     <%- include(`../partials/navbar.ejs`) %>
@@ -21,16 +18,22 @@
         <div class="rightdiv">
     <ul>
         <% for(let i = 0; i < quotes.length; i++){ %>
-        <li>
-            <h2><a href="/quotes/<%= quotes[i]._id %>"><%= quotes[i].firstName %>  
-                <%= quotes[i].lastName %></a></h2>
+
+
+                <p class="quotetext">
+                    <%= quotes[i].quoteText %>
+
+                </p>
+                <a href="/quotes/<%= quotes[i]._id %>">
+                 USer
+               </a>
           
             <section>
             <form action="/preachers/<%=quotes[i]._id%>?_method=DELETE" method="POST">
 
             <a href="/preachers/<%= quotes[i]._id %>/edit" class="button4">Edit</a>
             
-                <input type="submit" value="Delete Preacher" class="button5" />
+                
 
             </form>
         </section>

@@ -2,6 +2,12 @@
 <title>Preacher Quotes</title>
 </head>
 
+
+<!-- preacherID: String,
+    quoteText: String,
+    quoteSourceType: String,
+    quoteSourceURL: String, -->
+
 <body>
     <%- include(`../partials/navbar.ejs`) %>
     <main class="maindiv">
@@ -9,7 +15,7 @@
             <h1>Add a Quote</h1>
         </div>
         <div class="rightdiv">
-        <form action="/preachers" method="POST">
+        <form action="/quotes" method="POST">
             <label>Select Preacher</label>
 
             <select name="preacherID" class="formselect">
@@ -21,10 +27,17 @@
             </select>
 
             <label>Quote</label>
-            <textarea type="text" name="lastName" class="formtextarea"></textarea>
+            <textarea type="text" name="quoteText" class="formtextarea"></textarea>
 
             <label>Source of Quote</label>
-            <input type="text" name="yearOfBirth" class="formtextfield">
+
+            <select name="quoteSourceType" class="formselect">
+               
+                    <option value="Book">Audio</option>
+                    <option value="Book">Book</option>
+                    <option value="Book">Video</option>
+
+            </select>
 
             <label>Title</label>
             <input type="text" name="yearOfDeath" class="formtextfield">
