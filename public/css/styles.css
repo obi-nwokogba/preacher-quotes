@@ -138,6 +138,8 @@ main {
     font-weight:200;
     font-size:2.5em;
     line-height:1.3em;
+    margin-bottom:10px;
+    margin-top:20px;
 }
 
 .rightdiv2 {
@@ -146,16 +148,15 @@ main {
 }
 
 .rowcontainer {
-
     display: block;
-    width:100%;
-text-align: left;
-padding: 15px;
+    width:90%;
+    text-align: left;
+    padding: 15px;
 }
 
 .topsvglogo {
     width: 400px;
-    opacity: 0.3;
+    opacity: 0.6;
     margin-bottom: 15px;
 }
 
@@ -181,6 +182,11 @@ padding: 15px;
 .preacherthumbnail {
     max-width: 170px;
     max-height: 170px;
+    transition:0.17s;
+}
+
+.preacherthumbnail:hover{
+    opacity:0.8;
 }
 
 .footerbox {
