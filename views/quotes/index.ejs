@@ -23,7 +23,7 @@
                     <%= quotes[i].quoteText %>
                 </p>
 
-<div style="display:flex; flex-direction:row; justify-content: space-between;"><div>
+<div style="display:flex; flex-direction:column; justify-content: space-between;">
 
                 <a href="/preachers/<%= quotes[i].preacherId %>">
                    
@@ -39,8 +39,7 @@
 
                </span></a> 
                <br />
-            </div>
-               <div style="opacity:0.7;">
+            
                Source Type: <%= quotes[i].quoteSourceType %> <br />
                Source URL: <a href="<%= quotes[i].quoteSourceURL %>" target="_blank">
                <%= quotes[i].quoteSourceURL %></a>
@@ -51,13 +50,12 @@
                 <small>
             <a href="/preachers/<%= quotes[i]._id %>/edit" class="button4">Edit</a>
             
-          
             <input type="submit" value="Delete Quote" class="button5" /></small>
             
             </form>
         </section>
        
-        </div></div>
+        </div>
         <% } %>
    
 

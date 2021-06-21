@@ -15,11 +15,10 @@
        
         <div class="smallpreacherbox">
 
-
 <div class="preacherthumbnail">
-<img src="<%= preachers[i].preacherPhoto %>" class="preacherthumbnail">
+        <a href="/preachers/<%= preachers[i]._id %>">
+<img src="<%= preachers[i].preacherPhoto %>" class="preacherthumbnail"></a>
 </div>
-
 
             <h4><a href="/preachers/<%= preachers[i]._id %>"><%= preachers[i].firstName %>  
                 <%= preachers[i].lastName %></a></h4>
@@ -27,9 +26,18 @@
         <% } %>
 </div>
 
+
+
+
+
+
+
+
+
+
+
 <h2>Quotes</h2>
 <div class="rowcontainer">
-
 
         <% for(let i = 0; i < quotes.length; i++){ %>
 
@@ -37,35 +45,35 @@
                     <%= quotes[i].quoteText %>
                 </p>
 
-<div style="display:flex; flex-direction:row; justify-content: space-between;"><div>
+<div style="display:flex; flex-direction:column; justify-content: space-between;">
 
                 <a href="/preachers/<%= quotes[i].preacherId %>">
                    
 <span class="preachernameunderquote">
                     <% for(let j = 0; j < preachers.length; j++){ 
-
                         if(preachers[j]._id == quotes[i].preacherId){
                         %>
-
                         <%= preachers[j].firstName %> <%= preachers[j].lastName %>
-
                         <% } } %>
-
                </span></a> 
                <br />
-            </div>
-               </div>
+            
         <% } %>
 </div>
 
-<h2>Members</h2>
-<div class="rowcontainer">
-        <% for(let i = 0; i < users.length; i++){ %>
-                    <h3><strong><a href="/users/<%= users[i]._id %>"><%= users[i].displayName %></a></strong></h3>
-                <% } %>
-</div>
 
-<%= users.length %>
+
+
+
+
+
+
+<h2>Members</h2>
+<div class="rowcontainer"><h3>
+        <% for(let i = 0; i < users.length; i++){ %>
+                    <strong><a href="/users/<%= users[i]._id %>"><%= users[i].displayName %></a></strong> &nbsp;&middot;&nbsp;
+                <% } %>
+        </h3></div>
         </div>
     </main>
 

@@ -113,6 +113,12 @@ main {
     flex-direction: column;
 }
 
+.preachernameunderquote{
+    font-size:1.1em;
+    font-weight:400;
+    color:#9D5CC5;
+}
+
 .smallpreacherbox {
     width: 150px;
     height:200px;
@@ -190,12 +196,12 @@ main {
 }
 
 .footerbox {
-    font-size: 0.9em;
+    font-size: 0.93em;
     background: none;
     max-width: 1000px;
     margin: 0 auto;
     padding: 60px;
-    opacity: 0.8;
+    opacity: 0.95;
     line-height: 1.9em;
 }
 

@@ -56,7 +56,7 @@ const Quote = require('./models/quote');
 app.get('/', async (req, res) => {
     try {
         const preachers = await Preacher.find({});
-        const quotes = await Quote.find({});
+        const quotes = await Quote.find({}).sort({date: -1});
         const users = await User.find({});
         console.log(users);
         res.render('index', {preachers,quotes,users});
