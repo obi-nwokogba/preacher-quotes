@@ -3,10 +3,7 @@
 </head>
 
 
-<!-- preacherID: String,
-    quoteText: String,
-    quoteSourceType: String,
-    quoteSourceURL: String, -->
+
 
 <body>
     <%- include(`../partials/navbar.ejs`) %>
@@ -18,13 +15,20 @@
         <form action="/quotes" method="POST">
             <label>Select Preacher</label>
 
-            <select name="preacherID" class="formselect">
+            <select name="preacherId" class="formselect">
                 <% for(let i = 0; i < preachers.length; i++){ %>
-                    <option value="hi">
-                        <%= preachers[i].firstName %><%= preachers[i].lastName %>
+                    <option value="<%= preachers[i]._id %>">
+                        <%= preachers[i].firstName %> <%= preachers[i].lastName %>
                     </option>
                     <% } %>
             </select>
+
+            <!-- preacherID: String,
+    quoteText: String,
+    quoteSourceType: String,
+    quoteSourceURL: String,
+    quoteSourceTitle: String,
+    userId: String,-->
 
             <label>Quote</label>
             <textarea type="text" name="quoteText" class="formtextarea"></textarea>
@@ -39,11 +43,11 @@
 
             </select>
 
-            <label>Title</label>
-            <input type="text" name="yearOfDeath" class="formtextfield">
+            <label>URL to this Quote Source</label>
+            <input type="text" name="quoteSourceURL" class="formtextfield">
 
-            <label for="email">URL</label>
-            <input type="text" name="addedByUserId" class="formtextfield">
+            <label for="email">Your User ID</label>
+            <input type="text" name="userId" class="formtextfield">
 
 
             <button type="submit" class="button1">Add Quote</button>

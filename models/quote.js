@@ -2,10 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const quoteSchema = new Schema({
-    preacherID: String,
+    preacherId: String,
     quoteText: String,
     quoteSourceType: String,
     quoteSourceURL: String,
+    quoteSourceTitle: String,
+    userId: String,
     createdBy: {
         type: Schema.Types.ObjectId,
         ref: 'User'

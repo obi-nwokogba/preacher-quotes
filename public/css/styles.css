@@ -92,6 +92,10 @@ a:hover {
     text-decoration: none;
 }
 
+strong.a{
+    color:black !important;
+}
+
 main {
     background: #FCFCFC;
 }

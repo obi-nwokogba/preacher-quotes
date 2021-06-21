@@ -9,6 +9,7 @@ const preacherSchema = new Schema({
     yearOfDeath: String,
     addedByUserId: String,
     preacherPhoto: String,
+    assignedId: String,
     createdBy: {
         type: Schema.Types.ObjectId,
         ref: 'Preacher'

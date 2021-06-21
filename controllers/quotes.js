@@ -12,7 +12,8 @@ const Preacher = require('../models/preacher');
 router.get('/', async (req, res) => {
     try {
         const quotes = await Quote.find({});
-        res.render('quotes/index', { quotes });
+        const preachers = await Preacher.find({});
+        res.render('quotes/index', {quotes,preachers});
     } catch (error) {
         console.log(error);
         res.redirect('/');

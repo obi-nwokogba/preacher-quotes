@@ -19,27 +19,47 @@
     <ul>
         <% for(let i = 0; i < quotes.length; i++){ %>
 
-
                 <p class="quotetext">
                     <%= quotes[i].quoteText %>
-
                 </p>
-                <a href="/quotes/<%= quotes[i]._id %>">
-                 USer
-               </a>
-          
-            <section>
-            <form action="/preachers/<%=quotes[i]._id%>?_method=DELETE" method="POST">
 
+<div style="display:flex; flex-direction:row; justify-content: space-between;"><div>
+
+                <a href="/preachers/<%= quotes[i].preacherId %>">
+                   
+<span class="preachernameunderquote">
+                    <% for(let j = 0; j < preachers.length; j++){ 
+
+                        if(preachers[j]._id == quotes[i].preacherId){
+                        %>
+
+                        <%= preachers[j].firstName %> <%= preachers[j].lastName %>
+
+                        <% } } %>
+
+               </span></a> 
+               <br />
+            </div>
+               <div style="opacity:0.7;">
+               Source Type: <%= quotes[i].quoteSourceType %> <br />
+               Source URL: <a href="<%= quotes[i].quoteSourceURL %>" target="_blank">
+               <%= quotes[i].quoteSourceURL %></a>
+          
+               <br />
+            <section>
+            <form action="/quotes/<%=quotes[i]._id%>?_method=DELETE" method="POST">
+                <small>
             <a href="/preachers/<%= quotes[i]._id %>/edit" class="button4">Edit</a>
             
-                
-
+          
+            <input type="submit" value="Delete Quote" class="button5" /></small>
+            
             </form>
         </section>
-        </li>
+       
+        </div></div>
         <% } %>
-    </ul>
+   
 
         </div>
     </main>

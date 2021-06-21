@@ -28,12 +28,40 @@
 </div>
 
 <h2>Quotes</h2>
-<div class="rowcontainer"></div>
+<div class="rowcontainer">
+
+
+        <% for(let i = 0; i < quotes.length; i++){ %>
+
+                <p class="quotetext">
+                    <%= quotes[i].quoteText %>
+                </p>
+
+<div style="display:flex; flex-direction:row; justify-content: space-between;"><div>
+
+                <a href="/preachers/<%= quotes[i].preacherId %>">
+                   
+<span class="preachernameunderquote">
+                    <% for(let j = 0; j < preachers.length; j++){ 
+
+                        if(preachers[j]._id == quotes[i].preacherId){
+                        %>
+
+                        <%= preachers[j].firstName %> <%= preachers[j].lastName %>
+
+                        <% } } %>
+
+               </span></a> 
+               <br />
+            </div>
+               </div>
+        <% } %>
+</div>
 
 <h2>Members</h2>
 <div class="rowcontainer">
         <% for(let i = 0; i < users.length; i++){ %>
-                    <h3><a href="/users/<%= users[i]._id %>"><%= users[i].displayName %></a></h3>
+                    <h3><strong><a href="/users/<%= users[i]._id %>"><%= users[i].displayName %></a></strong></h3>
                 <% } %>
 </div>
 
